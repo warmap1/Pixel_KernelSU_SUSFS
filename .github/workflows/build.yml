@@ -214,7 +214,7 @@ jobs:
         set -ex
         # Copy fragment to kernel tree for bazel
         cp "$GITHUB_WORKSPACE/wild_gki.fragment" aosp/arch/arm64/configs/wild_gki.fragment
-        build_${{ matrix.codename }}.sh --config=release --stamp --defconfig_fragment=//aosp:arch/arm64/configs/wild_gki.fragment || exit 1
+        build${{ matrix.codename }}.sh --config=release --stamp --defconfig_fragment=//aosp:arch/arm64/configs/wild_gki.fragment || exit 1
 
     - name: Create Bootimgs Folder and Build Boot Images
       if: false
