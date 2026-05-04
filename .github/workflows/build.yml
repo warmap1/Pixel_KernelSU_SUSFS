@@ -185,20 +185,6 @@ jobs:
         kernel_version: ${{ env.KERNEL_VERSION }}
         sublevel: ${{ env.SUBLEVEL }}
 
-    - name: Setup Baseband Guard
-      if: contains(inputs.feature_set, 'BBG')
-      uses: ./.github/actions/bbg
-
-    - name: Setup netfilter/ipset options
-      uses: ./.github/actions/netfilter-ipset
-      with:
-        kernel_version: ${{ env.KERNEL_VERSION }}
-
-    - name: Setup BBRv3
-      uses: ./.github/actions/bbr
-      with:
-        kernel_version: ${{ env.KERNEL_VERSION }}
-
     - name: Apply Kernel Branding
       uses: ./.github/actions/apply-kernel-branding
       with:
