@@ -9,6 +9,7 @@ runs:
       working-directory: ${{ github.workspace }}/kernel
       run: |
         mkdir security
+        mkdir include
         wget -O- https://github.com/vc-teahouse/Baseband-guard/raw/main/setup.sh | bash
     
     - name: Configure Baseband Guard
